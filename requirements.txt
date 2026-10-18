@@ -1,0 +1,29 @@
+# Core
+python-dotenv==1.0.1
+requests==2.31.0
+PySocks==1.7.1
+
+# Module 1 — Shorts Automation
+yt-dlp==2024.3.10
+moviepy==1.0.3
+faster-whisper==0.10.1
+imageio==2.34.0
+imageio-ffmpeg==0.4.9
+numpy==1.26.4
+Pillow==10.3.0
+
+# YouTube Upload
+google-api-python-client==2.127.0
+google-auth==2.29.0
+google-auth-oauthlib==1.2.0
+google-auth-httplib2==0.2.0
+
+# Module 2 — Reddit Agent
+praw==7.7.1
+
+# Module 3 — SEO / Sitemap
+lxml==5.2.1
+
+# Module 4 — Discord Bot
+discord.py==2.3.2
+aiohttp==3.9.5

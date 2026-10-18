@@ -1,0 +1,67 @@
+{
+  "target_url": "https://web-umber-six-e1un7z6257.vercel.app",
+  "tmdb_base_url": "https://api.themoviedb.org/3",
+  "image_base_url": "https://image.tmdb.org/t/p/original",
+  "reddit_subreddits": [
+    "MovieSuggestions",
+    "FreeMoviesOnWatch",
+    "Piracy",
+    "cordcutters",
+    "animepiracy",
+    "movies",
+    "anime",
+    "streaming"
+  ],
+  "reddit_triggers": [
+    "where to watch",
+    "where can i watch",
+    "looking for a site to stream",
+    "any good site for",
+    "how to watch",
+    "free stream",
+    "watch online",
+    "full movie free",
+    "stream for free"
+  ],
+  "youtube_shorts": {
+    "title_template": "{movie_name} — Watch in 4K FREE 🎬 #Shorts",
+    "description_template": "🔥 Watch {movie_name} in Full 4K for FREE!\n👉 {url}\n\nNo ads. No signup. Just stream.\n\n#Movie #FreeMovies #4K #Shorts #{genre}",
+    "tags": ["free movies", "watch online", "4K streaming", "full movie", "no signup"],
+    "category_id": "1",
+    "privacy_status": "public"
+  },
+  "video_settings": {
+    "output_resolution": [1080, 1920],
+    "clip_duration_min": 30,
+    "clip_duration_max": 60,
+    "split_screen": true,
+    "split_ratio": 0.6,
+    "watermark_text": "web-umber-six-e1un7z6257.vercel.app",
+    "cta_text": "Watch Full Movie in 4K — Link in Bio",
+    "subtitle_font_size": 42,
+    "subtitle_color": "white",
+    "subtitle_bg_color": "black"
+  },
+  "seo": {
+    "movies_per_sitemap": 45000,
+    "fetch_pages": 50,
+    "languages": ["en"],
+    "sitemap_base_url": "https://web-umber-six-e1un7z6257.vercel.app"
+  },
+  "discord": {
+    "command_prefix": "/",
+    "embed_color": 3447003,
+    "stream_quality_tags": ["4K UHD", "1080p HD", "Fast Load", "Zero Ads"]
+  },
+  "proxy": {
+    "enabled": false,
+    "type": "socks5",
+    "rotation_interval": 300
+  },
+  "rate_limits": {
+    "reddit_min_delay": 8,
+    "reddit_max_delay": 25,
+    "youtube_upload_interval": 3600,
+    "tiktok_upload_interval": 7200
+  }
+}

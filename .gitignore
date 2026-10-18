@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+output/
+assets/temp/
+config/youtube_token.json
+.DS_Store
+Thumbs.db

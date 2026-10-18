@@ -1,0 +1,51 @@
+name: Reddit Traffic Agent
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # Every 30 minutes
+  workflow_dispatch:
+
+jobs:
+  reddit-scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Restore replied IDs cache
+        uses: actions/cache@v4
+        with:
+          path: output/replied_ids.json
+          key:  replied-ids-${{ github.run_id }}
+          restore-keys: |
+            replied-ids-
+
+      - name: Create output directory
+        run: mkdir -p output
+
+      - name: Run Reddit agent (time-limited scan)
+        run: |
+          timeout 20m python modules/2_reddit_agent/run_reddit.py || true
+        env:
+          REDDIT_CLIENT_ID:     ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USERNAME:      ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD:      ${{ secrets.REDDIT_PASSWORD }}
+          TMDB_API_KEY:         ${{ secrets.TMDB_API_KEY }}
+
+      - name: Save replied IDs cache
+        uses: actions/cache@v4
+        with:
+          path: output/replied_ids.json
+          key:  replied-ids-${{ github.run_id }}
